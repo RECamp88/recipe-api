@@ -19,7 +19,7 @@ public class RecipeDAO {
     public Recipe addRecipe(Recipe recipe){
         Connection connection = ConnectionSingleton.getConnection();
         try{
-            String sql = "INSERT INTO recipe (post_by, recipe_name, main_ingredient) VALUES (?, ?, ?);";
+            String sql = "INSERT INTO recipe (posted_by, recipe_name, main_ingredient) VALUES (?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             preparedStatement.setInt(1, recipe.getPostedBy());

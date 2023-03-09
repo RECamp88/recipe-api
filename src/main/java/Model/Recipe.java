@@ -13,7 +13,7 @@ public class Recipe {
 
     // this is a string stating the main ingredient
     // can be null, cannot be over 25 characters
-    public String recipe_mainIngredient;
+    public String main_ingredient;
 
     // default no argument constructor
     public Recipe(){
@@ -25,7 +25,7 @@ public class Recipe {
     public Recipe (int posted_by, String recipe_name, String recipe_mainIngredient){
         this.posted_by = posted_by;
         this.recipe_name = recipe_name;
-        this.recipe_mainIngredient = recipe_mainIngredient;
+        this.main_ingredient = recipe_mainIngredient;
     }
 
     // Constructor for when the system auto generates the recipe id when added to the database
@@ -34,7 +34,7 @@ public class Recipe {
         this.recipe_id = recipe_id;
         this.posted_by = posted_by;
         this.recipe_name = recipe_name;
-        this.recipe_mainIngredient = recipe_mainIngredient;
+        this.main_ingredient = recipe_mainIngredient;
     }
     public int getPostedBy() { return posted_by;}
 
@@ -59,11 +59,11 @@ public class Recipe {
     }
 
     public String getMainIngredient(){
-        return recipe_mainIngredient;
+        return main_ingredient;
     }
 
     public void setRecipeMainIngredient(String ingredient){
-        this.recipe_mainIngredient = ingredient;
+        this.main_ingredient = ingredient;
     }
 
 

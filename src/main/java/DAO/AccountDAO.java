@@ -6,14 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import Model.Account;
-import Util.ConnectionUtil;
+import Util.ConnectionSingleton;
 
 public class AccountDAO {
 
 
     public Account createAccount(Account account){
 
-        Connection connection = ConnectionUtil.getConnection();
+        Connection connection = ConnectionSingleton.getConnection();
         try {
             //Write SQL logic here
             String sql = "insert  into account (username,password) values(?,?)" ;
@@ -40,7 +40,7 @@ public class AccountDAO {
 
     public Account getLogin(Account account){
 
-        Connection connection = ConnectionUtil.getConnection();
+        Connection connection = ConnectionSingleton.getConnection();
         try {
             //Write SQL logic here
             String sql = "select * from account where username = ? and password = ?" ;
