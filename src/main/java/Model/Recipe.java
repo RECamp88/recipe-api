@@ -22,19 +22,32 @@ public class Recipe {
 
     // Constructor for when the system auto generates the recipe id when added to the database
     // main ingredient is not required for this constructor
-    public Recipe (int posted_by, String recipe_name){
-
+    public Recipe (int posted_by, String recipe_name, String recipe_mainIngredient){
+        this.posted_by = posted_by;
+        this.recipe_name = recipe_name;
+        this.recipe_mainIngredient = recipe_mainIngredient;
     }
 
     // Constructor for when the system auto generates the recipe id when added to the database
     // this constructor includes the main ingredient
-    public Recipe (int posted_by, String recipe_name, String recipe_mainIngredient){
-
+    public Recipe (int recipe_id, int posted_by, String recipe_name, String recipe_mainIngredient){
+        this.recipe_id = recipe_id;
+        this.posted_by = posted_by;
+        this.recipe_name = recipe_name;
+        this.recipe_mainIngredient = recipe_mainIngredient;
     }
+    public int getPostedBy() { return posted_by;}
 
+    public void setPosted_by(int id){
+        this.posted_by = id;
+    }
     // setters and getters for the above variables
     public int getRecipeId(){
         return recipe_id;
+    }
+
+    public void setRecipe_id(int id) {
+        this.recipe_id = id;
     }
 
     public String getRecipeName(){
